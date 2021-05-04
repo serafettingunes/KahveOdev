@@ -1,12 +1,16 @@
 import Abstract.BaseCustomerManager;
+import Abstract.ICustomerCheckService;
+import Adapter2.MernisServiceAdapter;
 import Concrate.NeroCustomerManger;
+import Concrate.StarbucksCustomerManager;
 import Entities.Customer;
 
 public class Main {
 
 	public static void main(String[] args) {
-		BaseCustomerManager baseCustomerManager =new NeroCustomerManger();
-		Long a = Long.valueOf("12345679118");
+		BaseCustomerManager baseCustomerManager1 =new StarbucksCustomerManager(new MernisServiceAdapter());
+		BaseCustomerManager baseCustomerManager2 =new NeroCustomerManger();
+		Long a = Long.valueOf("40040040040");
 
 		
 		Customer customer=new Customer();
@@ -16,7 +20,8 @@ public class Main {
 		 customer.setLastName("Güneþ");
 		 customer.setNationalityId(a);
 
-		 baseCustomerManager.save(customer);
+		 baseCustomerManager1.save(customer);
+		 baseCustomerManager2.save(customer);
 		 
 	}
 

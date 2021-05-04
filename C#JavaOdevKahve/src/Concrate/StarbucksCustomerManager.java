@@ -11,15 +11,16 @@ import Entities.Customer;
 public class StarbucksCustomerManager extends BaseCustomerManager {
 
 	private ICustomerCheckService _checkService;
-
+	
+	@Override
 	public void save(Customer customer)  {
 		try {
 			if (_checkService.CheckIfRealPerson(customer)) {
-			   System.out.println(customer.getFirstName());
+			 System.out.println( "Starbucksa Kaydedildi : "+ customer.getFirstName());
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			 System.out.println("Hata");
 		}
 		
 	}
@@ -31,6 +32,12 @@ public class StarbucksCustomerManager extends BaseCustomerManager {
 
 	public StarbucksCustomerManager() {
 		// TODO Auto-generated constructor stub
+	}
+
+	
+	public void save() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

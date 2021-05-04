@@ -11,7 +11,7 @@ public class MernisServiceAdapter implements ICustomerCheckService {
 
 	@Override
 	public boolean CheckIfRealPerson(Customer customer) {
-		KPSPublicSoap mernis = new KPSPublicSoapProxy();
+		KPSPublicSoapProxy mernis=new KPSPublicSoapProxy();
 
 		try {
 			return mernis.TCKimlikNoDogrula(customer.getNationalityId(), customer.getFirstName(),
